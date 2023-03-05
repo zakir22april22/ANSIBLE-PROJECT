@@ -10,4 +10,9 @@
    - name: install git
      apt:
       name: git
-      state: present   
+      state: present  
+
+   - name: install apache
+     apt:
+      name: apache2 
+      state: present    
