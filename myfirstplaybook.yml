@@ -20,4 +20,10 @@
    - name: i want to start apache2
      service:
       name: apache2
-      state: restarted      
+      state: restarted 
+
+   - name: install webserver on redhat node side
+     yum:
+      name: httpd
+      state: present
+     when : ansible_os_family =="redhat"          
