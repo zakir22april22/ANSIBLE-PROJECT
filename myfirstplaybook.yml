@@ -26,4 +26,4 @@
      yum:
       name: httpd
       state: present
-     when : ansible_os_family =="redhat"          
+     when : ansible_os_family == "redhat"          
