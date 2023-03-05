@@ -6,31 +6,37 @@
      apt: 
       name: tree
       state: present
+     when: ansible_os_family =="Debian" 
 
    - name: install git
      apt:
       name: git
-      state: present  
+      state: present 
+     when: ansible_os_family =="Debian"  
 
    - name: install apache
      apt:
       name: apache2 
       state: present 
+     when: ansible_os_family =="Debian" 
 
    - name: i want to start apache2
      service:
       name: apache2
       state: restarted 
+     when: ansible_os_family =="Debian"
 
    - name: install webserver on redhat node side
      yum:
       name: httpd
       state: present
-     when : ansible_os_family == "Redhat"     
+     when: ansible_os_family =="RedHat"
+     
 
    - name: start webserver
      service:
       name: httpd
       state: started
-     when : ansible_os_family == "Redhat"    
+     when: ansible_os_family =="RedHat"
+    
 
